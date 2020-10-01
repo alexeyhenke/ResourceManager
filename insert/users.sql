@@ -1,24 +1,6 @@
 -- Делаем db "Resource Manager" текущей
 USE RM;
 --
--- Создаём таблицу пользователей
---
-DROP TABLE IF EXISTS `users`;
-
-CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `first_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Имя пользователя',
-  `last_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Фамилия пользователя',
-  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Почта',
-  `phone` varchar(100) COLLATE utf8_unicode_ci COMMENT 'Телефон',
-  `role_id` varchar(100) DEFAULT 1 COLLATE utf8_unicode_ci NOT NULL COMMENT 'Роль',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `phone` (`phone`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Пользователи';
-
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `role_id`, `created_at`, `updated_at`) VALUES (1, 'Nat', 'Langworth', 'shaina.harris@example.net', '535.603.7855x569', 1, '1998-02-08 12:25:22', '1996-08-05 17:20:45');
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `role_id`, `created_at`, `updated_at`) VALUES (2, 'Lucile', 'Koss', 'nhermann@example.org', '(606)954-1798', 1, '1998-11-16 03:52:43', '1989-08-04 21:11:28');
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `role_id`, `created_at`, `updated_at`) VALUES (3, 'Elda', 'O\'Keefe', 'mveum@example.com', '441.867.5353x82177', 1, '2012-11-05 15:50:16', '1995-01-30 23:34:03');

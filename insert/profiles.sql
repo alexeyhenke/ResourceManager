@@ -1,20 +1,6 @@
 -- Делаем db "Resource Manager" текущей
 USE RM;
 --
--- Таблица профилей
---
-DROP TABLE IF EXISTS `profiles`;
-
-CREATE TABLE `profiles` (
-  `user_id` int(10) unsigned NOT NULL COMMENT 'Ссылка на пользователя',
-  `gender` char(1) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Пол',
-  `birthday` date DEFAULT NULL COMMENT 'Дата рождения',
-  `city_id` int(10) unsigned DEFAULT NULL COMMENT 'Город проживания',
-  `country_id` int(10) unsigned DEFAULT NULL COMMENT 'Страна проживания',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Профили';
 
 INSERT INTO `profiles` (`user_id`, `gender`, `birthday`, `city_id`, `country_id`, `created_at`, `updated_at`) VALUES (1, 'M', '2003-06-20', 83, 19, '2008-08-07 11:10:47', '1975-09-18 13:47:03');
 INSERT INTO `profiles` (`user_id`, `gender`, `birthday`, `city_id`, `country_id`, `created_at`, `updated_at`) VALUES (2, 'F', '2011-11-20', 78, 78, '1974-05-13 05:33:32', '1990-09-08 20:21:23');

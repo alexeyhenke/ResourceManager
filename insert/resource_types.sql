@@ -2,19 +2,6 @@
 -- Делаем db "Resource Manager" текущей
 USE RM;
 --
--- Таблица "Типы ресурсов"
---
-DROP TABLE IF EXISTS `resource_types`;
---
-CREATE TABLE `resource_types` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Название типа',
-  `description` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Описание',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Типы ресурсов';
 
 INSERT INTO `resource_types` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (101, 'Книга', 'Классическая книга в переплете', '2003-02-07 16:55:42', '2003-03-29 01:52:04');
 INSERT INTO `resource_types` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (102, 'E-Книга', 'Электронная книга', '1985-03-19 19:23:08', '1985-10-11 01:19:49');

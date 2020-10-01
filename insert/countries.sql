@@ -2,17 +2,6 @@
 USE RM;
 -- Таблица Страны
 
-DROP TABLE IF EXISTS `countries`;
-
-CREATE TABLE `countries` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Название государства',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Страны';
-
 INSERT INTO `countries` (`id`, `name`, `created_at`, `updated_at`) VALUES (1, 'Gambia', '1994-07-14 01:28:29', '2004-02-05 06:53:45');
 INSERT INTO `countries` (`id`, `name`, `created_at`, `updated_at`) VALUES (2, 'Czech Republic', '1976-11-08 16:43:31', '1997-01-11 23:26:45');
 INSERT INTO `countries` (`id`, `name`, `created_at`, `updated_at`) VALUES (3, 'Denmark', '1996-02-21 10:45:16', '1999-04-08 14:57:45');

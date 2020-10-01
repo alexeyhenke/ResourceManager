@@ -2,21 +2,6 @@
 -- Делаем db "Resource Manager" текущей
 USE RM;
 --
--- Таблица "Список ресурсов"
---
-DROP TABLE IF EXISTS `resources`;
-
-CREATE TABLE `resources` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Название ресурса',
-  `resource_type_id` int(10) unsigned NOT NULL COMMENT 'Тип ресурса',
-  `pickup_point_id` int(10) unsigned NOT NULL COMMENT 'Пункты выдачи',
-  `serial_number` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Серийный номер ресурса',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  `destroyed_at` datetime DEFAULT NULL COMMENT 'Время удаления ресурса',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Список ресурсов';
 
 INSERT INTO `resources` (`id`, `name`, `resource_type_id`, `pickup_point_id`, `serial_number`, `created_at`, `updated_at`, `destroyed_at`) VALUES (1, 'qui', 107, 1, 'd82ee108-bf68-38a6-a8d9-bdad58859ce4', '2010-09-27 06:37:02', '2014-06-08 19:40:09', NULL);
 INSERT INTO `resources` (`id`, `name`, `resource_type_id`, `pickup_point_id`, `serial_number`, `created_at`, `updated_at`, `destroyed_at`) VALUES (2, 'suscipit', 108, 4, '4dd7fecd-1625-3275-bb67-9b1a09bbc69f', '2017-07-06 22:33:14', '2018-05-21 10:13:50', NULL);

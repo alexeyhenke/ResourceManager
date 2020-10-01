@@ -1,17 +1,5 @@
 -- Делаем db "Resource Manager" текущей
 USE RM;
--- Таблица Города
-DROP TABLE IF EXISTS `cities`;
-
-CREATE TABLE `cities` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Наименование города',
-  `country_id` int(11) NOT NULL COMMENT 'Идентификатор страны',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Города';
 
 INSERT INTO `cities` (`id`, `name`, `country_id`, `created_at`, `updated_at`) VALUES (1, 'New Ardellaland', 9, '1972-08-03 04:14:26', '1983-10-21 03:52:08');
 INSERT INTO `cities` (`id`, `name`, `country_id`, `created_at`, `updated_at`) VALUES (2, 'Marcburgh', 50, '1979-07-07 19:26:26', '2010-09-10 21:48:39');

@@ -2,21 +2,6 @@
 -- Делаем db "Resource Manager" текущей
 USE RM;
 --
--- Таблица "Очереди аренды"
---
-DROP TABLE IF EXISTS `rent_queues`;
---
-CREATE TABLE `rent_queues` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `user_id` int(10) unsigned NOT NULL COMMENT 'Идентификатор пользователя',
-  `resource_id` int(10) unsigned NOT NULL COMMENT 'Идентификатор ресурса',
-  `starts_at` datetime DEFAULT current_timestamp() COMMENT 'Время начало аренды',
-  `ends_at` datetime DEFAULT current_timestamp() COMMENT 'Время окончания аренды',
-  `description` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Описание',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Очереди на аренду';
 
 INSERT INTO `rent_queues` (`id`, `user_id`, `resource_id`, `starts_at`, `ends_at`, `description`, `created_at`, `updated_at`) VALUES (1, 52, 35, '1982-04-30 10:50:18', '2010-12-11 03:23:06', 'Qui nesciunt corporis similique deleniti fugiat et expedita. Aut quasi omnis molestiae.', '1990-06-01 10:04:08', '2004-08-13 14:25:55');
 INSERT INTO `rent_queues` (`id`, `user_id`, `resource_id`, `starts_at`, `ends_at`, `description`, `created_at`, `updated_at`) VALUES (2, 71, 85, '2011-01-15 09:51:46', '1973-05-16 12:11:26', 'At ullam eos aliquid labore. Eligendi eum omnis nisi itaque laudantium cum deserunt accusantium. Rerum eum quam perferendis necessitatibus quae.', '1985-10-26 04:55:07', '2017-07-29 16:36:39');

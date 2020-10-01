@@ -2,20 +2,6 @@
 -- Делаем db "Resource Manager" текущей
 USE RM;
 --
--- Таблица "Свойство ресурсов"
---
-DROP TABLE IF EXISTS `resource_values`;
---
-CREATE TABLE `resource_values` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `resource_id` int(10) unsigned NOT NULL COMMENT 'Идентификатор ресурса',
-  `characteristic_id` int(10) unsigned NOT NULL COMMENT 'Характеристики ресурса',
-  `value` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Название value',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Свойство ресурсов';
-
 INSERT INTO `resource_values` (`id`, `resource_id`, `characteristic_id`, `value`, `created_at`, `updated_at`) VALUES (1, 86, 7, 'Fugit.', '2007-08-14 00:16:13', '2002-04-07 15:39:57');
 INSERT INTO `resource_values` (`id`, `resource_id`, `characteristic_id`, `value`, `created_at`, `updated_at`) VALUES (2, 55, 20, 'Voluptatem.', '2019-10-27 05:28:44', '1991-07-05 18:01:39');
 INSERT INTO `resource_values` (`id`, `resource_id`, `characteristic_id`, `value`, `created_at`, `updated_at`) VALUES (3, 20, 8, 'Odio vero.', '2019-10-30 17:54:26', '2004-10-20 16:49:06');

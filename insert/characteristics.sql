@@ -4,17 +4,6 @@ USE RM;
 --
 -- Таблица "Атрибуты ресурса"
 --
-DROP TABLE IF EXISTS `characteristics`;
---
-CREATE TABLE `characteristics` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Наименование атрибута ресурса',
-  `description` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Описание',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Атрибуты ресурса';
-
 INSERT INTO `characteristics` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (1, 'qui', 'Tenetur et optio cum vel voluptatum. Maxime rerum eius cumque est. Autem et distinctio rem est vitae molestias reiciendis doloremque. Ea et corporis aut tenetur dicta quod aut.', '1997-02-24 20:50:51', '1981-08-31 04:33:01');
 INSERT INTO `characteristics` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (2, 'cumque', 'Vel sapiente cupiditate modi omnis at. Impedit est culpa recusandae et nesciunt beatae assumenda cum. Vitae amet aut ipsum voluptatibus aperiam incidunt corrupti. Similique esse corporis deleniti amet culpa. Repellat consequatur rerum unde et dolores deleniti ut sit.', '2017-11-23 03:26:39', '2014-08-02 11:43:47');
 INSERT INTO `characteristics` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (3, 'veritatis', 'Facilis aut ducimus officiis sit. Ea ex quas sint ut optio nihil tenetur. Est aut quas et eos. Molestiae porro et ea velit atque sint.', '1994-03-09 08:19:20', '2009-04-11 22:42:09');

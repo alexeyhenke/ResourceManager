@@ -4,14 +4,6 @@ USE RM;
 --
 -- Таблица "Связи Атрибуты ресурса к Типу ресурса"
 --
-DROP TABLE IF EXISTS `characteristics_resource_types`;
---
-CREATE TABLE `characteristics_resource_types` (
-  `resource_type_id` int(10) unsigned NOT NULL COMMENT 'Идентификатор типа ресурса',
-  `characteristic_id` int(10) unsigned NOT NULL COMMENT 'Идентификатор атрибута ресурса',
-  PRIMARY KEY (`resource_type_id`,`characteristic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Связи Атрибуты ресурса к Типу ресурса';
-
 INSERT INTO `characteristics_resource_types` (`resource_type_id`, `characteristic_id`) VALUES (101, 1);
 INSERT INTO `characteristics_resource_types` (`resource_type_id`, `characteristic_id`) VALUES (101, 6);
 INSERT INTO `characteristics_resource_types` (`resource_type_id`, `characteristic_id`) VALUES (101, 16);

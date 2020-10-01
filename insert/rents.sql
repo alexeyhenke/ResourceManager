@@ -2,19 +2,6 @@
 -- Делаем db "Resource Manager" текущей
 USE RM;
 --
--- Таблица "Аренда"
---
-DROP TABLE IF EXISTS `rents`;
---
-CREATE TABLE `rents` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор строки',
-  `rent_queue_id` int(10) unsigned NOT NULL COMMENT 'Идентификатор очереди',
-  `starts_at` datetime DEFAULT current_timestamp() COMMENT 'Время начало аренды',
-  `ends_at` datetime DEFAULT current_timestamp() COMMENT 'Время окончания аренды',
-  `created_at` datetime DEFAULT current_timestamp() COMMENT 'Время создания строки',
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Время обновления строки',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Очереди на аренду';
 
 INSERT INTO `rents` (`id`, `rent_queue_id`, `starts_at`, `ends_at`, `created_at`, `updated_at`) VALUES (1, 73, '2009-10-07 17:50:57', '1982-12-16 07:30:29', '2018-09-12 01:47:02', '2001-12-04 03:46:03');
 INSERT INTO `rents` (`id`, `rent_queue_id`, `starts_at`, `ends_at`, `created_at`, `updated_at`) VALUES (2, 64, '2005-12-30 17:52:28', '1972-01-28 09:48:11', '2001-02-05 19:59:04', '1996-05-09 15:10:17');
